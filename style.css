@@ -1,0 +1,24 @@
+body {
+    background-image: url("images/_104620701_prmo_imc_br-nc.png");
+    background-size: 100%;
+    display: flex;
+    justify-content: center;
+   
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+
+}
+
+input {
+    padding: 10px;
+   
+}
+
+button {
+    color: white;
+    background-color: blue;
+ 
+}
