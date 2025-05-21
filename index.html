@@ -4,66 +4,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Javascript</title>
-<link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css">
     <script>
-       function CalcularIMC(){
+        function CalcularIMC() {
+            let peso = parseFloat(document.getElementById("peso").value);
+            let altura = parseFloat(document.getElementById("altura").value);
 
-       let peso = parseInt( document.getElementById("peso").value);
-;
-       let altura = parseInt( document.getElementById("altura").value);
+            let resultado = "";
+            let IMC = peso / (altura * altura);
 
-       let resultado = "";
+            if (IMC < 18.5) {
+                resultado = "Abaixo do peso normal";
+            } else if (IMC < 25) {
+                resultado = "Peso normal";
+            } else if (IMC < 30) {
+                resultado = "Excesso de peso";
+            } else if (IMC < 35) {
+                resultado = "Obesidade Classe I";
+            } else if (IMC < 40) {
+                resultado = "Obesidade Classe II";
+            } else {
+                resultado = "Obesidade Classe III";
+            }
 
-       let IMC = peso / (altura*altura);
-
-       if ($IMC < 18.5) {
-    resultado = "Abaixo do peso normal:";
-} 
-
-elseif ($IMC <25) {
-    resultado = "Peso Normal";
-}
-
-elseif ($IMC <30) {
-    resultado = "Excesso de Peso";
-}
-
-elseif ($IMC <35) {
-    resultado = "Obesidade Classe I";
-}
-
-elseif ($IMC <40) {
-    resultado = "Obesidade Classe II: ";
-}
-
-
-else {
-    resultado = "Obesidade Classe III " ;
-}
-
-       }
-
-   document.getElementById ("resultado").innerHTML= resultado;
-
+            document.getElementById("resultado").innerText = resultado;
+        }
     </script>
-
-
-
 </head>
 <body>
-
-    <h1>Calculo IMC</h1>
+    <h1>Cálculo do IMC</h1>
 
     <form>
-
-        <label for="peso">Peso (KG):</label>
+        <label for="peso">Peso (kg):</label>
         <input type="number" step="0.01" name="peso" id="peso" required>
 
-        <label for="altura">Altura (m)</label>
+        <label for="altura">Altura (m):</label>
         <input type="number" step="0.01" name="altura" id="altura" required>
 
-        <button onclick="CalcularIMC()"> Calcular IMC </button>
+        <button type="button" onclick="CalcularIMC()">Calcular IMC</button>
     </form>
+
     <p id="resultado"></p>
 </body>
 </html>
